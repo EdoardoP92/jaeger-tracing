@@ -1,0 +1,10 @@
+opentracing:
+  jaeger:
+    enabled: true
+    service-name: ${JAEGER_SERVICE_NAME:jaeger}
+    log-spans: ${JAEGER_REPORTER_LOG_SPANS:true}
+    probabilistic-sampler:
+      sampling-rate: ${JAEGER_SAMPLER_PARAM:1.0}
+    udp-sender:
+      host: ${JAEGER_AGENT_HOST:localhost}
+      port: ${JAEGER_AGENT_PORT:6831}
